@@ -31,9 +31,14 @@ class Iterator
 
   # Get the next element in relation to current.
   def next_element
-    validates_possibility_of :next
     self.index += 1
-    self.current
+    self.index < self.array.length ?
+      self.current : nil
+      
+  end
+  
+  def valid?
+    self.index < self.array.length
   end
 
   # Get the previous element in relation to current.
@@ -45,7 +50,6 @@ class Iterator
 
   # Get the current element of array.
   def current
-    validates_possibility_of :current
     self.array[index]
   end
 
