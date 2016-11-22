@@ -12,6 +12,5 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir.glob('spec/*.rb')
   spec.rubyforge_project = 'iterator'
 
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '< 3.0'
 end
