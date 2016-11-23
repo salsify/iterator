@@ -1,5 +1,3 @@
-require 'rake'
-
 Gem::Specification.new do |spec|
   spec.name = "iterator"
   spec.version = "1.0.0"
@@ -10,7 +8,9 @@ Gem::Specification.new do |spec|
   spec.summary = "A simple iterator for ruby arrays."
   spec.has_rdoc = false
   spec.description = "A simple iterator for ruby arrays."
-  spec.files = FileList["lib/*", "spec/*", "README.rdoc"].to_a
+  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.test_files = Dir.glob('spec/*.rb')
   spec.rubyforge_project = 'iterator'
+
+  spec.add_development_dependency 'rspec', '< 3.0'
 end

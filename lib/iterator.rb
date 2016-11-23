@@ -43,13 +43,14 @@ class Iterator
 
   # Get the previous element in relation to current.
   def previous
-    validates_possibility_of :previous
+    validates_possibility_of(:previous)
     self.index -= 1
     self.current
   end
 
   # Get the current element of array.
   def current
+    validates_possibility_of(:current)
     self.array[index]
   end
 
@@ -78,6 +79,7 @@ class Iterator
     def validates_possibility_of(action)
       case action
       when :next
+        # Note: this is unused. Next on the last element returns nil.
         raise "There aren't more elements into the array. The current element is the last element of the array." if self.last?
       when :previous
         raise "There aren't previous elements into the array. The current element is the first element of the array." if self.first?

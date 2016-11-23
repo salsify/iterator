@@ -34,8 +34,8 @@ describe Iterator do
       end
     end
 
-    it "should raise an error if a next element is called from the last element" do
-      lambda { @iterator.next_element }.should raise_error
+    it "returns nil if next_element is called from the last element" do
+      expect(@iterator.next_element).to be_nil
     end
 
     it "should raise an error if a previous element is called from the first element" do
@@ -46,11 +46,8 @@ describe Iterator do
       }.should raise_error
     end
 
-    it "should raise an error if current element is called without initialize the iterator calling next_element method" do
-      lambda {
-        it = @integers.iterator
-        it.current
-      }.should raise_error
+    it "raises an error if the current element is called without initializing the iterator by calling next_element" do
+      expect { @integers.iterator.current }.to raise_error(/There is no current element/)
     end
   end
 end
