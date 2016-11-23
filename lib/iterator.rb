@@ -43,14 +43,14 @@ class Iterator
 
   # Get the previous element in relation to current.
   def previous
-    validates_possibility_of :previous
+    validates_possibility_of(:previous)
     self.index -= 1
     self.current
   end
 
   # Get the current element of array.
   def current
-    validates_possibility_of :current
+    validates_possibility_of(:current)
     self.array[index]
   end
 
