@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.date = "2008-11-13"
   spec.authors = ["Felipe Mesquita", "Vicente Mundim", "Claudio Escudero"]
   spec.email = ["felipe.mesquita@intelitiva.com", "vicente.mundim@intelitiva.com", "claudio.escudero@intelitiva.com"]
-  spec.homepage = "git://github.com/intelitiva/iterator/tree/master"
+  spec.homepage = "https://github.com/intelitiva/iterator/tree/master"
   spec.summary = "A simple iterator for ruby arrays."
   spec.has_rdoc = false
   spec.description = "A simple iterator for ruby arrays."
